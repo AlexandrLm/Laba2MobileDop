@@ -12,7 +12,8 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
-    var x : Int = 8
+    val N : Int = 10
+    var x : Int = N-2
     var y : Int = 1
     var score : Int = 0
 
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         map[1] = arrayOf(findViewById(R.id.imageView4), findViewById(R.id.imageView5), findViewById(R.id.imageView6))     // вторая строка
         map[2] = arrayOf(findViewById(R.id.imageView7), findViewById(R.id.imageView8), findViewById(R.id.imageView9))     // третья строка
 /*
-        mas    = Array(10) { Array(10) { 0 } }
+        mas    = Array(N) { Array(10) { 0 } }
         mas[0] = arrayOf(1,1,1,1,1,1,1,1,0,0)
         mas[1] = arrayOf(1,1,1,1,1,1,1,0,0,0)
         mas[2] = arrayOf(1,1,1,1,1,1,0,0,1,1)
@@ -41,10 +42,9 @@ class MainActivity : AppCompatActivity() {
         mas[8] = arrayOf(1,0,0,0,0,0,0,0,1,1)
         mas[9] = arrayOf(1,1,1,1,1,1,1,1,1,1) */
 
-        mas = Array(10){Array(10) { Random.nextInt(2)} }
+        mas = Array(N){Array(N) { Random.nextInt(2)} }
 
         refresh()
-
     }
     @SuppressLint("SetTextI18n")
     fun refresh(){
@@ -103,7 +103,6 @@ class MainActivity : AppCompatActivity() {
             y++
             score++
         }
-
         refresh()
     }
 }
